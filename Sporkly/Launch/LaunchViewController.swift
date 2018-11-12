@@ -45,7 +45,7 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
         countingLabel.count(fromValue: 0, to: 100, withDuration: 2.5, andAnimationType: .Linear, andCountingType: .Int)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
-            self.performSegue(withIdentifier: "showSporkly", sender: self)
+            self.performSegue(withIdentifier: "test", sender: self)
         }
     }
 
