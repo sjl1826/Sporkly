@@ -50,7 +50,7 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let sporklyVC = segue.destination as! NavigateRestaurantsController
+        let sporklyVC = segue.destination as! TestViewController
         sporklyVC.transitioningDelegate = self
         sporklyVC.modalPresentationStyle = .custom
     }
