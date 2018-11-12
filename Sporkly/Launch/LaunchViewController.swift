@@ -21,12 +21,12 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
         let center = view.center
         let trackLayer = CAShapeLayer()
 
-        let circularPath = UIBezierPath(arcCenter: center, radius: 100, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
+        let circularPath = UIBezierPath(arcCenter: center, radius: 70, startAngle: -CGFloat.pi / 2, endAngle: 2 * CGFloat.pi, clockwise: true)
 
         trackLayer.path = circularPath.cgPath
 
         trackLayer.strokeColor = UIColor.red.cgColor
-        trackLayer.lineWidth = 12
+        trackLayer.lineWidth = 6
         trackLayer.fillColor = UIColor.clear.cgColor
         trackLayer.lineCap = CAShapeLayerLineCap.round
         view.layer.addSublayer(trackLayer)
@@ -34,7 +34,7 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
         shapeLayer.path = circularPath.cgPath
 
         shapeLayer.strokeColor = UIColor.white.cgColor
-        shapeLayer.lineWidth = 15
+        shapeLayer.lineWidth = 6
         shapeLayer.fillColor = UIColor.clear.cgColor
         shapeLayer.lineCap = CAShapeLayerLineCap.round
 
@@ -42,9 +42,9 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
 
         view.layer.addSublayer(shapeLayer)
         fillCircle()
-        countingLabel.count(fromValue: 0, to: 100, withDuration: 2.5, andAnimationType: .Linear, andCountingType: .Int)
+        countingLabel.count(fromValue: 0, to: 100, withDuration: 0.8, andAnimationType: .Linear, andCountingType: .Int)
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             self.performSegue(withIdentifier: "test", sender: self)
         }
     }
@@ -75,7 +75,7 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
 
         basicAnimation.toValue = 1
 
-        basicAnimation.duration = 2.5
+        basicAnimation.duration = 0.9
 
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false

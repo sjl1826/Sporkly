@@ -26,7 +26,7 @@
                                     <constraint firstAttribute="height" constant="48" id="h3H-od-APY"/>
                                 </constraints>
                                 <state key="normal" title="Submit">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="submitRequest:" destination="f6E-ol-Uw2" eventType="touchUpInside" id="MvS-3v-wZQ"/>

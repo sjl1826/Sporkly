@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKK-xu-X1b" customClass="CountingLabel" customModule="Sporkly" customModuleProvider="target">
-                                <rect key="frame" x="149.5" y="315.5" width="76.5" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <rect key="frame" x="161.5" y="321.5" width="52" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="u0n-Yp-hxT">
-                                <rect key="frame" x="52.5" y="55.5" width="270" height="120"/>
+                                <rect key="frame" x="52.5" y="61.5" width="270" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="QOS-lc-oen"/>
                                     <constraint firstAttribute="width" constant="270" id="a9Q-Xj-MY1"/>
