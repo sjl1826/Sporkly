@@ -1,0 +1,6 @@
+framework module Pods_Sporkly {
+  umbrella header "Pods-Sporkly-umbrella.h"
+
+  export *
+  module * { export * }
+}
