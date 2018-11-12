@@ -31,7 +31,7 @@ extension Menu: Decodable {
 
 struct MenuItem {
     var name: String
-    var price: Double
+    var price: String
     var picture: String
     var description: String
     var keywords: String
@@ -49,7 +49,7 @@ extension MenuItem: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: ItemKeys.self)
         name = try container.decode(String.self, forKey: .name)
-        price = try container.decode(Double.self, forKey: .price)
+        price = try container.decode(String.self, forKey: .price)
         picture = try container.decode(String.self, forKey: .picture)
         description = try container.decode(String.self, forKey: .description)
         keywords = try container.decode(String.self, forKey: .keywords)

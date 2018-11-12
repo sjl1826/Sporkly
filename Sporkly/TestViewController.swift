@@ -20,7 +20,7 @@ class TestViewController: UIViewController {
                 print("Successfully completed request")
                 for item in menuItems.entrees {
                     print("Name: \(item.name)")
-                    print("Price: \(String(item.price))")
+                    print("Price: \(item.price)")
                     print("Picture?: \(item.picture)")
                     print("Description: \(item.description)")
                     print("Keywords: \(item.keywords)")
