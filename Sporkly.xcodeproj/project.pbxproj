@@ -15,8 +15,6 @@
 		BD70DC76219A24DD00BAEE97 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD70DC75219A24DD00BAEE97 /* Menu.swift */; };
 		BD70DC78219A2BF400BAEE97 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD70DC77219A2BF400BAEE97 /* API.swift */; };
 		BD70DC7A219A2D5600BAEE97 /* Moya.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD70DC79219A2D5600BAEE97 /* Moya.swift */; };
-		BD70DC7C219A308100BAEE97 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD70DC7B219A308100BAEE97 /* Test.storyboard */; };
-		BD70DC7E219A30C000BAEE97 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD70DC7D219A30C000BAEE97 /* TestViewController.swift */; };
 		BDADF195217A95D2005A6BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDADF194217A95D2005A6BD6 /* AppDelegate.swift */; };
 		BDADF19A217A95D2005A6BD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDADF198217A95D2005A6BD6 /* Main.storyboard */; };
 		BDADF19C217A95D3005A6BD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDADF19B217A95D3005A6BD6 /* Assets.xcassets */; };
@@ -61,8 +59,6 @@
 		BD70DC75219A24DD00BAEE97 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		BD70DC77219A2BF400BAEE97 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BD70DC79219A2D5600BAEE97 /* Moya.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Moya.swift; sourceTree = "<group>"; };
-		BD70DC7B219A308100BAEE97 /* Test.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
-		BD70DC7D219A30C000BAEE97 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		BDADF191217A95D2005A6BD6 /* Sporkly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sporkly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDADF194217A95D2005A6BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDADF199217A95D2005A6BD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -158,8 +154,6 @@
 				BDADF1C2217A95D9005A6BD6 /* Launch */,
 				BDADF19B217A95D3005A6BD6 /* Assets.xcassets */,
 				BDADF1A0217A95D3005A6BD6 /* Info.plist */,
-				BD70DC7B219A308100BAEE97 /* Test.storyboard */,
-				BD70DC7D219A30C000BAEE97 /* TestViewController.swift */,
 			);
 			path = Sporkly;
 			sourceTree = "<group>";
@@ -349,7 +343,6 @@
 				BDADF19C217A95D3005A6BD6 /* Assets.xcassets in Resources */,
 				BDADF19A217A95D2005A6BD6 /* Main.storyboard in Resources */,
 				BDADF1CF217AD4EF005A6BD6 /* Launch.storyboard in Resources */,
-				BD70DC7C219A308100BAEE97 /* Test.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,7 +448,6 @@
 			files = (
 				BDADF1CB217AC661005A6BD6 /* Extensions.swift in Sources */,
 				BDADF1D3217AD907005A6BD6 /* NavigateRestaurantsController.swift in Sources */,
-				BD70DC7E219A30C000BAEE97 /* TestViewController.swift in Sources */,
 				BDADF1CD217AC81C005A6BD6 /* CountingLabel.swift in Sources */,
 				BDADF1D1217AD859005A6BD6 /* CircularTransition.swift in Sources */,
 				BDADF1C8217A96B7005A6BD6 /* SporkStoryboard.swift in Sources */,

@@ -45,12 +45,12 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
         countingLabel.count(fromValue: 0, to: 100, withDuration: 0.8, andAnimationType: .Linear, andCountingType: .Int)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            self.performSegue(withIdentifier: "test", sender: self)
+            self.performSegue(withIdentifier: "bluetooth", sender: self)
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let sporklyVC = segue.destination as! TestViewController
+        let sporklyVC = segue.destination as! BluetoothForMenuViewController
         sporklyVC.transitioningDelegate = self
         sporklyVC.modalPresentationStyle = .custom
     }
