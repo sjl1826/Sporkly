@@ -44,20 +44,12 @@
                     </view>
                     <connections>
                         <outlet property="countingLabel" destination="CKK-xu-X1b" id="qvI-DN-MX4"/>
-                        <segue destination="mBW-TM-gAd" kind="show" identifier="test" id="e6m-0w-o1F"/>
+                        <segue destination="77E-ug-IwO" kind="show" identifier="menu" id="nFk-PT-ArV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnG-eO-MHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-26.399999999999999" y="-93.103448275862078"/>
-        </scene>
-        <!--Test-->
-        <scene sceneID="xPP-mR-n1r">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Test" id="mBW-TM-gAd" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8FD-Vf-VMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="426" y="-163"/>
+            <point key="canvasLocation" x="-28" y="-89"/>
         </scene>
         <!--Main-->
         <scene sceneID="oa4-68-IP2">
@@ -65,7 +57,7 @@
                 <viewControllerPlaceholder storyboardIdentifier="Main" storyboardName="Main" id="77E-ug-IwO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FiP-DR-VO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="541" y="-116"/>
+            <point key="canvasLocation" x="469" y="-139"/>
         </scene>
     </scenes>
     <resources>
