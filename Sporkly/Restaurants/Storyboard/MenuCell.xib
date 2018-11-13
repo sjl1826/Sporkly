@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -47,10 +47,10 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNT-cq-uWl">
-                        <rect key="frame" x="140" y="78" width="250" height="26"/>
+                        <rect key="frame" x="186" y="78" width="204" height="26"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="26" id="SlM-c6-LG0"/>
-                            <constraint firstAttribute="width" constant="250" id="yG9-cx-KBJ"/>
+                            <constraint firstAttribute="width" constant="204" id="eeZ-fe-0Zl"/>
                         </constraints>
                         <attributedString key="attributedText">
                             <fragment content="Label">
@@ -64,7 +64,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ua4-Lr-WUa">
-                        <rect key="frame" x="140" y="86" width="55" height="12"/>
+                        <rect key="frame" x="136" y="86" width="55" height="12"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="55" id="oh0-mF-hW2"/>
                             <constraint firstAttribute="height" constant="12" id="uN0-dY-XfA"/>
@@ -74,7 +74,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIK-ti-jRH">
-                        <rect key="frame" x="329" y="85" width="65" height="12"/>
+                        <rect key="frame" x="333" y="85" width="65" height="12"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="12" id="bNa-iI-6Tu"/>
                             <constraint firstAttribute="width" constant="65" id="ymA-E3-LAm"/>
@@ -112,7 +112,7 @@
                 <outlet property="nameLabel" destination="ZTQ-g5-cds" id="QQF-2P-hsF"/>
                 <outlet property="rightLabel" destination="OIK-ti-jRH" id="uJw-5f-mOZ"/>
             </connections>
-            <point key="canvasLocation" x="261.60000000000002" y="-86.35682158920541"/>
+            <point key="canvasLocation" x="261.5625" y="-87.5"/>
         </tableViewCell>
     </objects>
     <resources>
