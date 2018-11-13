@@ -10,11 +10,15 @@ import Foundation
 
 struct Menu {
     var entrees: [MenuItem]
+    var drinks: [MenuItem]
+    var desserts: [MenuItem]
 }
 
 extension Menu: Decodable {
     enum MenuTypeKey: String, CodingKey {
         case entrees
+        case drinks
+        case desserts
     }
 
     init(from decoder: Decoder) throws {
@@ -26,6 +30,21 @@ extension Menu: Decodable {
             items.append(menuItem)
         }
         entrees = items
+        items.removeAll()
+        var drinksList = try container.nestedUnkeyedContainer(forKey: MenuTypeKey.drinks)
+        while(!drinksList.isAtEnd) {
+            let drinksItem = try drinksList.decode(MenuItem.self)
+            items.append(drinksItem)
+        }
+        drinks = items
+        items.removeAll()
+        var dessertsList = try container.nestedUnkeyedContainer(forKey: MenuTypeKey.desserts)
+        while(!dessertsList.isAtEnd) {
+            let dessertItem = try dessertsList.decode(MenuItem.self)
+            items.append(dessertItem)
+        }
+        desserts = items
+        items.removeAll()
     }
 }
 
