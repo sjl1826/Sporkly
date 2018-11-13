@@ -25,6 +25,20 @@ class TestViewController: UIViewController {
                     print("Description: \(item.description)")
                     print("Keywords: \(item.keywords)")
                 }
+                for item in menuItems.drinks {
+                    print("Name: \(item.name)")
+                    print("Price: \(item.price)")
+                    print("Picture?: \(item.picture)")
+                    print("Description: \(item.description)")
+                    print("Keywords: \(item.keywords)")
+                }
+                for item in menuItems.desserts {
+                    print("Name: \(item.name)")
+                    print("Price: \(item.price)")
+                    print("Picture?: \(item.picture)")
+                    print("Description: \(item.description)")
+                    print("Keywords: \(item.keywords)")
+                }
             }
         }
     }
