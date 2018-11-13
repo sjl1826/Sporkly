@@ -21,7 +21,7 @@ extension MainAPI: TargetType {
     var path: String {
         switch self {
         case .getMenu:
-            return "/menu/"
+            return "/menu"
         }
     }
 
