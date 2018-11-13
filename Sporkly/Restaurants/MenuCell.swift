@@ -15,6 +15,8 @@ class MenuCell: UITableViewCell {
     @IBOutlet weak var backgroundBox: UIView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var leftLabel: UILabel!
+    @IBOutlet weak var rightLabel: UILabel!
 
     var item: MenuCellPresentable? {
         didSet {
@@ -26,6 +28,10 @@ class MenuCell: UITableViewCell {
             nameLabel.numberOfLines = 2
             detailLabel.text = item?.detail
             detailLabel.textColor = item?.detailColor ?? .black
+            leftLabel.text = item?.left
+            leftLabel.textColor = UIColor.gray
+            rightLabel.text = item?.right
+            rightLabel.textColor = UIColor.gray
         }
     }
     override func awakeFromNib() {
@@ -39,5 +45,7 @@ class MenuCell: UITableViewCell {
         iconImageView.image = nil
         backgroundBox.backgroundColor = .white
         nameLabel.text = nil
+        leftLabel.text = nil
+        rightLabel.text = nil
     }
 }

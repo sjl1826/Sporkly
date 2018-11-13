@@ -40,6 +40,14 @@ class CheesecakeFactory: MenuCellPresentable {
     var detail: String? {
         return "Fullerton, CA"
     }
+
+    var left: String? {
+        return "Pastas"
+    }
+
+    var right: String? {
+        return "$$"
+    }
 }
 
 class BobsBurgers: MenuCellPresentable {
@@ -61,6 +69,14 @@ class BobsBurgers: MenuCellPresentable {
 
     var detail: String? {
         return "Anaheim, CA"
+    }
+
+    var left: String? {
+        return "Burgers"
+    }
+
+    var right: String? {
+        return "$"
     }
 }
 
@@ -84,6 +100,14 @@ class ChefBills: MenuCellPresentable {
     var detail: String? {
         return "Los Angeles, CA"
     }
+
+    var left: String? {
+        return "Steak"
+    }
+
+    var right: String? {
+        return "$$$"
+    }
 }
 
 class ChineseCuisine: MenuCellPresentable {
@@ -105,5 +129,13 @@ class ChineseCuisine: MenuCellPresentable {
 
     var detail: String? {
         return "Westwood, CA"
+    }
+
+    var left: String? {
+        return "Asian"
+    }
+
+    var right: String? {
+        return "$$"
     }
 }

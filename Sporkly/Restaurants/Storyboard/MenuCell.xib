@@ -63,15 +63,39 @@
                         </attributedString>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ua4-Lr-WUa">
+                        <rect key="frame" x="140" y="86" width="55" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="55" id="oh0-mF-hW2"/>
+                            <constraint firstAttribute="height" constant="12" id="uN0-dY-XfA"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIK-ti-jRH">
+                        <rect key="frame" x="329" y="85" width="65" height="12"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="12" id="bNa-iI-6Tu"/>
+                            <constraint firstAttribute="width" constant="65" id="ymA-E3-LAm"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="pDZ-fZ-Eet" firstAttribute="centerY" secondItem="90e-1n-FPe" secondAttribute="centerY" id="9t4-tR-XgZ"/>
                     <constraint firstAttribute="bottom" secondItem="tmA-ta-bRP" secondAttribute="bottom" constant="5" id="BFE-4P-L0a"/>
                     <constraint firstItem="tmA-ta-bRP" firstAttribute="trailing" secondItem="pDZ-fZ-Eet" secondAttribute="trailing" constant="20" id="DKe-go-3Va"/>
                     <constraint firstItem="tmA-ta-bRP" firstAttribute="top" secondItem="90e-1n-FPe" secondAttribute="top" constant="5" id="GV8-x5-DGI"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="OIK-ti-jRH" secondAttribute="trailing" constant="15" id="Ivz-UY-Par"/>
                     <constraint firstItem="bNT-cq-uWl" firstAttribute="top" secondItem="pDZ-fZ-Eet" secondAttribute="bottom" constant="8.5" id="K91-TA-fDh"/>
+                    <constraint firstItem="ua4-Lr-WUa" firstAttribute="leading" secondItem="90e-1n-FPe" secondAttribute="leadingMargin" constant="120" id="L5s-Xj-zkl"/>
                     <constraint firstAttribute="trailing" secondItem="bNT-cq-uWl" secondAttribute="trailing" constant="39" id="LjW-5V-Dul"/>
                     <constraint firstItem="tmA-ta-bRP" firstAttribute="leading" secondItem="90e-1n-FPe" secondAttribute="leading" constant="30" id="M9Q-dx-mCK"/>
+                    <constraint firstItem="OIK-ti-jRH" firstAttribute="top" secondItem="pDZ-fZ-Eet" secondAttribute="bottom" constant="15.5" id="Nui-ir-I8w"/>
+                    <constraint firstItem="ua4-Lr-WUa" firstAttribute="top" secondItem="90e-1n-FPe" secondAttribute="topMargin" constant="75" id="OFX-Qm-2p4"/>
                     <constraint firstItem="tmA-ta-bRP" firstAttribute="trailing" secondItem="UKN-IV-jWH" secondAttribute="trailing" constant="15" id="VKd-F3-hmh"/>
                     <constraint firstAttribute="trailing" secondItem="tmA-ta-bRP" secondAttribute="trailing" constant="30" id="aWU-jo-fJt"/>
                     <constraint firstItem="UKN-IV-jWH" firstAttribute="leading" secondItem="tmA-ta-bRP" secondAttribute="leading" constant="15" id="cA9-hP-rTT"/>
@@ -84,7 +108,9 @@
                 <outlet property="backgroundBox" destination="tmA-ta-bRP" id="Z2T-3P-v28"/>
                 <outlet property="detailLabel" destination="bNT-cq-uWl" id="9BG-1w-2gV"/>
                 <outlet property="iconImageView" destination="erY-m8-CAG" id="gIS-4c-KG8"/>
+                <outlet property="leftLabel" destination="ua4-Lr-WUa" id="nxs-vo-uSg"/>
                 <outlet property="nameLabel" destination="ZTQ-g5-cds" id="QQF-2P-hsF"/>
+                <outlet property="rightLabel" destination="OIK-ti-jRH" id="uJw-5f-mOZ"/>
             </connections>
             <point key="canvasLocation" x="261.60000000000002" y="-86.35682158920541"/>
         </tableViewCell>

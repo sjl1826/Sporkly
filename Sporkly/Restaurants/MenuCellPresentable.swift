@@ -16,6 +16,8 @@ protocol MenuCellPresentable {
     var icon: UIImage? { get }
     var detail: String? { get }
     var detailColor: UIColor { get }
+    var left: String? { get }
+    var right: String? { get }
 }
 
 extension MenuCellPresentable {
@@ -38,5 +40,13 @@ extension MenuCellPresentable {
 
     var detailColor: UIColor {
         return .black
+    }
+
+    var left: String? {
+        return nil
+    }
+
+    var right: String? {
+        return nil
     }
 }
