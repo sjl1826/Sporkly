@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f6E-ol-Uw2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f6E-ol-Uw2">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,6 +30,7 @@
                                 </state>
                                 <connections>
                                     <action selector="submitRequest:" destination="f6E-ol-Uw2" eventType="touchUpInside" id="MvS-3v-wZQ"/>
+                                    <segue destination="pIu-KF-SZh" kind="show" id="kZh-Q9-Ulh"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -44,6 +45,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0n1-ft-rXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="256.80000000000001" y="-51.724137931034484"/>
+        </scene>
+        <!--DetailsPage-->
+        <scene sceneID="KEo-3A-rRI">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailsPage" id="pIu-KF-SZh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kXp-6D-rlp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="751" y="-205"/>
         </scene>
     </scenes>
 </document>

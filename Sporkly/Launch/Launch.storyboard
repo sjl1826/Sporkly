@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="-26.399999999999999" y="-93.103448275862078"/>
         </scene>
-        <!--BluetoothForMenu-->
+        <!--Test-->
         <scene sceneID="xPP-mR-n1r">
             <objects>
-                <viewControllerPlaceholder storyboardName="BluetoothForMenu" id="mBW-TM-gAd" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Test" id="mBW-TM-gAd" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8FD-Vf-VMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="426" y="-163"/>
