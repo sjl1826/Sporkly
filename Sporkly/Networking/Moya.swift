@@ -15,7 +15,7 @@ enum MainAPI {
 
 extension MainAPI: TargetType {
     var baseURL: URL {
-        return URL(string: "http://172.20.10.11:8000/menu")!
+        return URL(string: "https://floating-stream-88357.herokuapp.com/menu")!
     }
 
     var path: String {

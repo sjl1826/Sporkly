@@ -12,6 +12,7 @@
 		56B9790921A0A6BA00773F80 /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B9790721A0A6BA00773F80 /* Test.storyboard */; };
 		56B9790A21A0A6BA00773F80 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B9790821A0A6BA00773F80 /* TestViewController.swift */; };
 		56B9790C21A0A6EA00773F80 /* DetailsPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B9790B21A0A6EA00773F80 /* DetailsPage.storyboard */; };
+		56E27CAB21AA572A002ACAE6 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E27CAA21AA572A002ACAE6 /* SearchBar.swift */; };
 		8C18F924E36B04E2EB78DF1E /* Pods_SporklyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0690DE2BFB415ACE7FC6FE1 /* Pods_SporklyUITests.framework */; };
 		B376F2ADA08F357E43447C31 /* Pods_SporklyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896F980D33400FB1AC63076B /* Pods_SporklyTests.framework */; };
 		BD70DC76219A24DD00BAEE97 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD70DC75219A24DD00BAEE97 /* Menu.swift */; };
@@ -58,6 +59,7 @@
 		56B9790721A0A6BA00773F80 /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		56B9790821A0A6BA00773F80 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		56B9790B21A0A6EA00773F80 /* DetailsPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsPage.storyboard; sourceTree = "<group>"; };
+		56E27CAA21AA572A002ACAE6 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		632DB369DEBA2F340A849A17 /* Pods-Sporkly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sporkly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sporkly/Pods-Sporkly.release.xcconfig"; sourceTree = "<group>"; };
 		896F980D33400FB1AC63076B /* Pods_SporklyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SporklyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD70DC75219A24DD00BAEE97 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				BDADF19B217A95D3005A6BD6 /* Assets.xcassets */,
 				BDADF1A0217A95D3005A6BD6 /* Info.plist */,
 				56B9790521A0A63200773F80 /* DetailsPageViewController.swift */,
+				56E27CAA21AA572A002ACAE6 /* SearchBar.swift */,
 				56B9790B21A0A6EA00773F80 /* DetailsPage.storyboard */,
 			);
 			path = Sporkly;
@@ -453,6 +456,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56E27CAB21AA572A002ACAE6 /* SearchBar.swift in Sources */,
 				BDADF1CB217AC661005A6BD6 /* Extensions.swift in Sources */,
 				BDADF1D3217AD907005A6BD6 /* NavigateRestaurantsController.swift in Sources */,
 				BDADF1CD217AC81C005A6BD6 /* CountingLabel.swift in Sources */,

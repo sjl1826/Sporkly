@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBp-ny-tcg">
-                                        <rect key="frame" x="10" y="15" width="34" height="30"/>
+                                        <rect key="frame" x="10" y="18" width="34" height="30"/>
                                         <state key="normal" title="Back">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -30,7 +30,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.23091053" blue="0.24455212179999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstItem="sBp-ny-tcg" firstAttribute="centerY" secondItem="9b7-qP-RwU" secondAttribute="centerY" id="17u-q7-G7z"/>
+                                    <constraint firstItem="sBp-ny-tcg" firstAttribute="centerY" secondItem="9b7-qP-RwU" secondAttribute="centerY" multiplier="1.1" id="17u-q7-G7z"/>
                                     <constraint firstAttribute="height" constant="60" id="2oI-cn-Afx"/>
                                     <constraint firstItem="sBp-ny-tcg" firstAttribute="leading" secondItem="9b7-qP-RwU" secondAttribute="leading" constant="10" id="zIS-rw-8kn"/>
                                 </constraints>
@@ -44,29 +44,29 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wGT-ho-ynU" userLabel="InfoArea">
                                 <rect key="frame" x="0.0" y="348" width="375" height="319"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZq-ht-1G8">
-                                        <rect key="frame" x="19" y="10" width="262.5" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Item Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QZq-ht-1G8">
+                                        <rect key="frame" x="19" y="10" width="262.5" height="50"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Rlc-4y-4wf"/>
+                                            <constraint firstAttribute="height" constant="50" id="Rlc-4y-4wf"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yqf-0n-GPM" userLabel="Line">
-                                        <rect key="frame" x="19" y="46" width="337.5" height="2"/>
+                                        <rect key="frame" x="19" y="70" width="337.5" height="2"/>
                                         <color key="backgroundColor" red="1" green="0.284166841" blue="0.38032420420000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="2" id="SSC-wa-NsS"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A beautiful chicken breast topped with mustard" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0m-qS-10G" userLabel="Description">
-                                        <rect key="frame" x="37.5" y="58" width="300" height="241"/>
+                                        <rect key="frame" x="37.5" y="92" width="300" height="207"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-7e-TGE">
-                                        <rect key="frame" x="314.5" y="14.5" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeK-7e-TGE" userLabel="Price">
+                                        <rect key="frame" x="322" y="24.5" width="34.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -79,11 +79,11 @@
                                     <constraint firstItem="XeK-7e-TGE" firstAttribute="centerY" secondItem="QZq-ht-1G8" secondAttribute="centerY" id="GDb-QZ-l5x"/>
                                     <constraint firstItem="QZq-ht-1G8" firstAttribute="leading" secondItem="yqf-0n-GPM" secondAttribute="leading" id="S5Q-p4-FbH"/>
                                     <constraint firstItem="QZq-ht-1G8" firstAttribute="width" secondItem="wGT-ho-ynU" secondAttribute="width" multiplier="0.7" id="UnO-no-Opw"/>
-                                    <constraint firstItem="N0m-qS-10G" firstAttribute="top" secondItem="yqf-0n-GPM" secondAttribute="bottom" constant="10" id="Vdi-Sb-Ivb"/>
+                                    <constraint firstItem="N0m-qS-10G" firstAttribute="top" secondItem="yqf-0n-GPM" secondAttribute="bottom" constant="20" id="Vdi-Sb-Ivb"/>
                                     <constraint firstItem="yqf-0n-GPM" firstAttribute="centerX" secondItem="wGT-ho-ynU" secondAttribute="centerX" id="YOz-27-ZZp"/>
                                     <constraint firstItem="yqf-0n-GPM" firstAttribute="width" secondItem="wGT-ho-ynU" secondAttribute="width" multiplier="0.9" id="d4M-Iz-l5M"/>
                                     <constraint firstAttribute="bottom" secondItem="N0m-qS-10G" secondAttribute="bottom" constant="20" id="hMB-VN-ReW"/>
-                                    <constraint firstItem="yqf-0n-GPM" firstAttribute="top" secondItem="QZq-ht-1G8" secondAttribute="bottom" constant="6" id="onG-SJ-O0u"/>
+                                    <constraint firstItem="yqf-0n-GPM" firstAttribute="top" secondItem="QZq-ht-1G8" secondAttribute="bottom" constant="10" id="onG-SJ-O0u"/>
                                     <constraint firstItem="QZq-ht-1G8" firstAttribute="top" secondItem="wGT-ho-ynU" secondAttribute="top" constant="10" id="qTq-Gd-XFV"/>
                                 </constraints>
                             </view>
@@ -107,6 +107,7 @@
                         <outlet property="foodDescription" destination="N0m-qS-10G" id="pd2-zD-ZXa"/>
                         <outlet property="foodName" destination="QZq-ht-1G8" id="JsE-Tx-V2q"/>
                         <outlet property="foodPic" destination="k9B-3a-4YY" id="VTr-8e-7TV"/>
+                        <outlet property="foodPrice" destination="XeK-7e-TGE" id="TEx-rj-xus"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dSJ-Pb-uMY" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -44,7 +44,7 @@
                     </view>
                     <connections>
                         <outlet property="countingLabel" destination="CKK-xu-X1b" id="qvI-DN-MX4"/>
-                        <segue destination="mBW-TM-gAd" kind="show" identifier="bluetooth" id="e6m-0w-o1F"/>
+                        <segue destination="mBW-TM-gAd" kind="show" identifier="test" id="e6m-0w-o1F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UnG-eO-MHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
