@@ -42,15 +42,15 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
 
         view.layer.addSublayer(shapeLayer)
         fillCircle()
-        countingLabel.count(fromValue: 0, to: 100, withDuration: 0.8, andAnimationType: .Linear, andCountingType: .Int)
+        countingLabel.count(fromValue: 0, to: 100, withDuration: 1.1, andAnimationType: .Linear, andCountingType: .Int)
 
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
-            self.performSegue(withIdentifier: "test", sender: self)
+            self.performSegue(withIdentifier: "menu", sender: self)
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let sporklyVC = segue.destination as! TestViewController
+        let sporklyVC = segue.destination as! HomeViewController
         sporklyVC.transitioningDelegate = self
         sporklyVC.modalPresentationStyle = .custom
     }
@@ -75,7 +75,7 @@ class LaunchViewController: UIViewController, UIViewControllerTransitioningDeleg
 
         basicAnimation.toValue = 1
 
-        basicAnimation.duration = 0.9
+        basicAnimation.duration = 1.5
 
         basicAnimation.fillMode = CAMediaTimingFillMode.forwards
         basicAnimation.isRemovedOnCompletion = false
