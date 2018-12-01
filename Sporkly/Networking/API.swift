@@ -11,9 +11,9 @@ import Moya
 
 class API {
     static let provider = MoyaProvider<MainAPI>()
-}
+    var menuDelegate: MenuDelegate? = nil
+    static var shared = API()
 
-extension API {
     static func getMenu(completion: @escaping (Menu) -> Void) {
         provider.request(.getMenu()) { result in
             switch result {
@@ -21,6 +21,7 @@ extension API {
                 do {
                     let results = try JSONDecoder().decode(Menu.self, from: response.data)
                     completion(results)
+                    self.shared.menuDelegate?.didGetMenu(menu: results)
                 } catch let err {
                     print("Decoding Failure")
                     print(err)
@@ -31,3 +32,5 @@ extension API {
         }
     }
 }
+
+protocol MenuDelegate { func didGetMenu(menu: Menu) }

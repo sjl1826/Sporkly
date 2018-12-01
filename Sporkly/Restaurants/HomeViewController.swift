@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, UISearchBarDelegate {
+class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView! {
@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
             tableView.registerNib(forCellType: MenuCell.self)
         }
     }
-  //  let searchController = SearchBarController()
+    //let searchController = SearchBarController()
     //searchController.tableType = "food"
     var items: [MenuCellPresentable] = []
     var desserts: [MenuItem] = [] // 3 separate for organization?
@@ -24,35 +24,39 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
     var drinks: [MenuItem] = []
     var allItems: [MenuItem] = [] // for loading tableview?
     var selectedRestaurant : String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        API.shared.menuDelegate = self
         items = Restaurants.defaultRestaurants
-        loadResults()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadWithAnimation()
     }
+
     func sortByLowestPrice() {
         let sorted = entrees.sorted(by:{$0.price < $1.price})
         allItems.removeAll()
         allItems = sorted
     }
+
     func sortByHighestPrice() {
         let sorted = entrees.sorted(by:{$0.price > $1.price})
         allItems.removeAll()
         allItems = sorted
     }
+
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searched = searchBar.text
         let searchedUpper = searched?.uppercased()
         // for restaurants
         if selectedRestaurant == nil {
             for i in 0...items.count - 1  {
-                var titleUpper = items[i].title?.uppercased()
+                let titleUpper = items[i].title?.uppercased()
                 if titleUpper!.range(of: searchedUpper!) != nil {
-                    print(items[i].title)
+                    print(items[i].title ?? "")
                 }
             }
         }
@@ -79,38 +83,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate {
             }
         }
     }
-    func loadResults() {
-        DispatchQueue.global(qos: .background).async {
-            API.getMenu { (menuItems) in
-                for item in menuItems.entrees {
-                    print("Name: \(item.name)")
-                    print("Price: \(item.price)")
-                    print("Picture?: \(item.picture)")
-                    print("Description: \(item.description)")
-                    print("Keywords: \(item.keywords)")
-                    self.entrees.append(item)
-                }
-                for item in menuItems.drinks {
-                    print("Name: \(item.name)")
-                    print("Price: \(item.price)")
-                    print("Picture?: \(item.picture)")
-                    print("Description: \(item.description)")
-                    print("Keywords: \(item.keywords)")
-                    self.drinks.append(item)
-                }
-                print("Successfully completed request")
-                for item in menuItems.desserts {
-                    print("Name: \(item.name)")
-                    print("Price: \(item.price)")
-                    print("Picture?: \(item.picture)")
-                    print("Description: \(item.description)")
-                    print("Keywords: \(item.keywords)")
-                    self.desserts.append(item)
-                }
-                    self.sortByLowestPrice()
-            }
-        }
-    }
     
 }
 
@@ -127,5 +99,26 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        items[indexPath.row].didSelectCell()
+    }
+
+    func didGetMenu(menu: Menu) {
+        var menuItems = [MenuItem]()
+        for menuItem in menu.entrees { menuItems.append(menuItem); self.entrees.append(menuItem) }
+        for menuItem in menu.desserts { menuItems.append(menuItem); self.desserts.append(menuItem) }
+        for menuItem in menu.drinks { menuItems.append(menuItem); self.drinks.append(menuItem) }
+        self.sortByLowestPrice()
+        var newItems = [MenuCellPresentable]()
+        for item in menuItems {
+            let newItem: ReusableItem = ReusableItem(title: item.name, imageName: item.name,
+                                                     detail: "", price: item.price,
+                                                     category: item.description)
+            newItems.append(newItem)
+        }
+        items = newItems
+        self.tableView.reloadWithAnimation()
     }
 }

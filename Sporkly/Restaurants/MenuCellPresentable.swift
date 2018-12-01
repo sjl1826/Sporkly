@@ -21,6 +21,11 @@ protocol MenuCellPresentable {
 }
 
 extension MenuCellPresentable {
+    func didSelectCell() {
+        API.getMenu { (menu) in
+            API.shared.menuDelegate?.didGetMenu(menu: menu)
+        }
+    }
 
     var titleColor: UIColor {
         return .black
