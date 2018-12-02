@@ -13,50 +13,34 @@ class DetailsPageViewController: UIViewController {
     @IBOutlet weak var foodDescription: UILabel!
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var foodPrice: UILabel!
-    var entrees = [MenuItem]()
-    var desserts = [MenuItem]()
-    var drinks = [MenuItem]()
+    var foodPicText = String()
+    var foodNameText = String()
+    var foodDescriptionText = String()
+    var foodPriceText = String()
+    var item : MenuCellPresentable?
     override func viewDidLoad() {
         super.viewDidLoad()
-        DispatchQueue.global(qos: .background).async {
-            API.getMenu { (menuItems) in
-                print("Successfully completed request")
-                for item in menuItems.entrees {
-                    print("Name: \(item.name)")
-                    print("Price: \(item.price)")
-                    print("Picture?: \(item.picture)")
-                    print("Description: \(item.description)")
-                    print("Keywords: \(item.keywords)")
-                    self.entrees.append(item)
-                }
-                for item in menuItems.drinks {
-                    print("Name: \(item.name)")
-                    print("Price: \(item.price)")
-                    print("Picture?: \(item.picture)")
-                    print("Description: \(item.description)")
-                    print("Keywords: \(item.keywords)")
-                    self.drinks.append(item)
-                }
-                for item in menuItems.desserts {
-                    print("Name: \(item.name)")
-                    print("Price: \(item.price)")
-                    print("Picture?: \(item.picture)")
-                    print("Description: \(item.description)")
-                    print("Keywords: \(item.keywords)")
-                    self.desserts.append(item)
-                }
-                self.foodName.text = self.desserts[0].name
-                self.foodDescription.text = self.desserts[0].description
-                self.foodPrice.text = String(self.desserts[0].price)
-                let name = self.foodName.text?.split(separator: " ")
-                let combined = name?.joined(separator: "")
-                let both = "CCF_" + combined!
-                self.foodPic.image = UIImage(named: both)
-                
-            }
+        self.foodName.text = self.foodNameText
+        self.foodDescription.text = self.foodDescriptionText
+        self.foodPrice.text = self.foodPriceText
+        if let pic = UIImage(named: self.foodNameText) {
+            foodPicText = self.foodNameText
+        } else {
+            foodPicText = "NoPictureIcon"
         }
-
+        self.foodPic.image = UIImage(named:foodPicText)
+        
+    
+}
+    @IBAction func backToList(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
-    
-    
+    @IBAction func addToPlate(_ sender: Any) {
+        let plateBoard = UIStoryboard(name: "Plate", bundle: nil)
+        let plate = plateBoard.instantiateViewController(withIdentifier: "PlateViewController") as! PlateViewController
+        plate.view.backgroundColor = UIColor.clear
+        plate.modalPresentationStyle = .overCurrentContext
+        Plate.plateArray.append(item!)
+        self.present(plate, animated: true, completion: nil)
+    }
 }

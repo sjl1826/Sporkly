@@ -10,32 +10,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Plate-->
+        <!--PlateViewController-->
         <scene sceneID="Mao-ey-jND">
             <objects>
-                <viewController title="Plate" id="Lk3-sE-sRN" customClass="PlateViewController" customModule="Sporkly" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PlateViewController" title="PlateViewController" id="Lk3-sE-sRN" customClass="PlateViewController" customModule="Sporkly" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fGA-Fr-lAg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kco-zk-Pzi">
-                                <rect key="frame" x="28" y="133.5" width="319" height="400"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kco-zk-Pzi" userLabel="Container">
+                                <rect key="frame" x="0.0" y="133.5" width="375" height="400"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="335-rW-SCk">
-                                        <rect key="frame" x="4" y="0.5" width="34" height="30"/>
-                                        <state key="normal" title="Back"/>
+                                        <rect key="frame" x="10" y="6" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="JuF-tA-Pwd"/>
+                                            <constraint firstAttribute="width" secondItem="335-rW-SCk" secondAttribute="height" multiplier="1:1" id="hQ4-Us-F3a"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="backIcon"/>
                                         <connections>
                                             <action selector="goBack:" destination="Lk3-sE-sRN" eventType="touchUpInside" id="VKN-b0-nC4"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Plate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3h-iw-VFf" userLabel="Title">
-                                        <rect key="frame" x="121" y="5" width="77.5" height="21"/>
+                                        <rect key="frame" x="149" y="8" width="77.5" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JqK-56-qPS">
-                                        <rect key="frame" x="0.0" y="40" width="319" height="360"/>
+                                        <rect key="frame" x="0.0" y="40" width="375" height="360"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -45,26 +49,33 @@
                                     <constraint firstAttribute="bottom" secondItem="JqK-56-qPS" secondAttribute="bottom" id="684-Hm-XSF"/>
                                     <constraint firstItem="Y3h-iw-VFf" firstAttribute="centerX" secondItem="Kco-zk-Pzi" secondAttribute="centerX" id="ATq-wR-Iy2"/>
                                     <constraint firstItem="JqK-56-qPS" firstAttribute="width" secondItem="Kco-zk-Pzi" secondAttribute="width" id="EDG-h9-YrU"/>
-                                    <constraint firstItem="Y3h-iw-VFf" firstAttribute="top" secondItem="Kco-zk-Pzi" secondAttribute="top" constant="5" id="RUn-RT-EDY"/>
+                                    <constraint firstItem="Y3h-iw-VFf" firstAttribute="top" secondItem="Kco-zk-Pzi" secondAttribute="top" constant="8" id="RUn-RT-EDY"/>
                                     <constraint firstItem="JqK-56-qPS" firstAttribute="leading" secondItem="Kco-zk-Pzi" secondAttribute="leading" id="e7w-hg-3M9"/>
                                     <constraint firstAttribute="trailing" secondItem="JqK-56-qPS" secondAttribute="trailing" id="fbF-WS-TTI"/>
                                     <constraint firstItem="335-rW-SCk" firstAttribute="centerY" secondItem="Y3h-iw-VFf" secondAttribute="centerY" id="jep-vz-yMa"/>
-                                    <constraint firstItem="335-rW-SCk" firstAttribute="leading" secondItem="Kco-zk-Pzi" secondAttribute="leading" constant="4" id="qyI-QY-HIH"/>
+                                    <constraint firstItem="335-rW-SCk" firstAttribute="leading" secondItem="Kco-zk-Pzi" secondAttribute="leading" constant="10" id="qyI-QY-HIH"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Kco-zk-Pzi" firstAttribute="width" secondItem="fGA-Fr-lAg" secondAttribute="width" multiplier="0.85" id="6FH-uG-KJd"/>
+                            <constraint firstItem="Kco-zk-Pzi" firstAttribute="width" secondItem="fGA-Fr-lAg" secondAttribute="width" id="6FH-uG-KJd"/>
                             <constraint firstItem="Kco-zk-Pzi" firstAttribute="centerY" secondItem="fGA-Fr-lAg" secondAttribute="centerY" id="7IL-IO-nC2"/>
                             <constraint firstItem="Kco-zk-Pzi" firstAttribute="centerX" secondItem="fGA-Fr-lAg" secondAttribute="centerX" id="fRN-D7-JKG"/>
                             <constraint firstItem="Kco-zk-Pzi" firstAttribute="height" secondItem="fGA-Fr-lAg" secondAttribute="height" multiplier="0.6" id="wG0-iS-NYV"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="yso-gp-m7N"/>
                     </view>
+                    <connections>
+                        <outlet property="container" destination="Kco-zk-Pzi" id="dWY-za-pr4"/>
+                        <outlet property="plateTable" destination="JqK-56-qPS" id="YFL-oh-fnb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnY-We-z4a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="128.80000000000001" y="-71.514242878560722"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="backIcon" width="50" height="50"/>
+    </resources>
 </document>

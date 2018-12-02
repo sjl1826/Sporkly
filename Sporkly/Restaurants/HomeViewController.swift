@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+struct Plate {
+    static var plateArray = [MenuCellPresentable] ()
+}
 class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
@@ -22,7 +24,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
     var desserts: [MenuItem] = [] // 3 separate for organization?
     var entrees: [MenuItem] = []
     var drinks: [MenuItem] = []
-    var allItems: [MenuItem] = [] // for loading tableview?
+    var menuItems: [MenuItem] = [] // for loading tableview?
+    var allItems: [MenuItem] = []
     var selectedRestaurant : String?
 
     override func viewDidLoad() {
@@ -36,52 +39,70 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
         tableView.reloadWithAnimation()
     }
 
+    @IBAction func filterList(_ sender: Any) {
+        sortByLowestPrice()
+    }
+    @IBAction func showPlate(_ sender: Any) {
+        let plateBoard = UIStoryboard(name: "Plate", bundle: nil)
+        let plate = plateBoard.instantiateViewController(withIdentifier: "PlateViewController") as! PlateViewController
+        plate.view.backgroundColor = UIColor.clear
+        plate.modalPresentationStyle = .overCurrentContext
+        self.present(plate, animated: true, completion: nil)
+        
+    }
     func sortByLowestPrice() {
-        let sorted = entrees.sorted(by:{$0.price < $1.price})
-        allItems.removeAll()
-        allItems = sorted
+        let sorted = menuItems.sorted(by:{$0.price < $1.price})
+        menuItems.removeAll()
+        menuItems = sorted
+        items.removeAll()
+        reloadItemList()
+        tableView.reloadData()
+    
     }
 
     func sortByHighestPrice() {
-        let sorted = entrees.sorted(by:{$0.price > $1.price})
-        allItems.removeAll()
-        allItems = sorted
+        let sorted = menuItems.sorted(by:{$0.price > $1.price})
+        menuItems.removeAll()
+        menuItems = sorted
+        reloadItemList()
+        tableView.reloadData()
+        
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searched = searchBar.text
         let searchedUpper = searched?.uppercased()
         // for restaurants
+        menuItems.removeAll()
+        items.removeAll()
         if selectedRestaurant == nil {
-            for i in 0...items.count - 1  {
-                let titleUpper = items[i].title?.uppercased()
+            for i in 0...Restaurants.defaultRestaurants.count - 1   {
+                let titleUpper = Restaurants.defaultRestaurants[i].title?.uppercased()
                 if titleUpper!.range(of: searchedUpper!) != nil {
-                    print(items[i].title ?? "")
+                   items.append(Restaurants.defaultRestaurants[i])
                 }
             }
+            tableView.reloadData()
+            return
         }
         // for menu
-        for i in 0...desserts.count - 1 {
-            if desserts[i].name.range(of:searchedUpper!) != nil {
-                print(desserts[i].name)
-            } else if desserts[i].description.range(of:searchedUpper!) != nil {
-                print(desserts[i].name)
+        for i in 0...allItems.count - 1 {
+            if allItems[i].name.range(of:searchedUpper!) != nil {
+                menuItems.append(allItems[i])
+            } else if allItems[i].description.range(of:searchedUpper!) != nil {
+                menuItems.append(allItems[i])
             }
         }
-        for i in 0...drinks.count - 1 {
-            if drinks[i].name.range(of:searchedUpper!) != nil {
-                print(drinks[i].name)
-            } else if drinks[i].description.range(of:searchedUpper!) != nil {
-                print(drinks[i].name)
-            }
-        }
-        for i in 0...entrees.count - 1 {
-            if entrees[i].name.range(of:searchedUpper!) != nil {
-                print(entrees[i].name)
-            } else if entrees[i].description.range(of:searchedUpper!) != nil {
-                print(entrees[i].name)
-            }
-        }
+        reloadItemList()
+        tableView.reloadData()
+        
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        print("WHY")
+        menuItems.removeAll()
+        menuItems = allItems
+        reloadItemList()
+        tableView.reloadData()
     }
     
 }
@@ -102,23 +123,48 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (selectedRestaurant == nil) {
         items[indexPath.row].didSelectCell()
+        selectedRestaurant = items[indexPath.row].title
+        } else if ((selectedRestaurant != nil) && menuItems.count > 0) {
+            let foodInfo = menuItems[indexPath.row]
+            let detailsBoard = UIStoryboard(name: "DetailsPage", bundle: nil)
+            let detailPage = detailsBoard.instantiateViewController(withIdentifier: "DetailsPageViewController") as! DetailsPageViewController
+            detailPage.foodDescriptionText = foodInfo.description
+            detailPage.foodPriceText = String(foodInfo.price)
+            detailPage.foodNameText = foodInfo.name
+            detailPage.item = items[indexPath.row]
+            self.present(detailPage, animated: true, completion: nil)
+            
+        }
+        
     }
 
     func didGetMenu(menu: Menu) {
-        var menuItems = [MenuItem]()
+        menuItems.removeAll()
         for menuItem in menu.entrees { menuItems.append(menuItem); self.entrees.append(menuItem) }
         for menuItem in menu.desserts { menuItems.append(menuItem); self.desserts.append(menuItem) }
         for menuItem in menu.drinks { menuItems.append(menuItem); self.drinks.append(menuItem) }
-        self.sortByLowestPrice()
+        reloadItemList()
+        allItems = menuItems
+        self.tableView.reloadWithAnimation()
+    }
+    
+    func reloadItemList() {
         var newItems = [MenuCellPresentable]()
         for item in menuItems {
-            let newItem: ReusableItem = ReusableItem(title: item.name, imageName: item.name,
+            var picName = String()
+            if let pic = UIImage(named: item.name) {
+                picName = item.name
+            } else {
+                picName = "NoPictureIcon"
+            }
+            let newItem: ReusableItem = ReusableItem(title: item.name, imageName: picName,
                                                      detail: "", price: item.price,
                                                      category: item.description)
             newItems.append(newItem)
         }
         items = newItems
-        self.tableView.reloadWithAnimation()
+    
     }
 }
