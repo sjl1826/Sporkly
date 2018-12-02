@@ -23,7 +23,7 @@ class PlateViewController: UIViewController, Plateable, UITableViewDelegate, UIT
         super.viewDidLoad()
         plateTable.delegate = self
         plateTable.dataSource = self
-        plateTable.reloadData()
+        plateTable.reloadWithAnimation()
         container.layer.masksToBounds = false
         container.layer.shadowRadius = 5
         container.layer.shadowColor = UIColor.gray.cgColor
@@ -37,7 +37,7 @@ class PlateViewController: UIViewController, Plateable, UITableViewDelegate, UIT
 
     func addPlate(item: MenuCellPresentable) {
         plateList.append(item)
-        plateTable.reloadData()
+        plateTable.reloadWithAnimation()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
