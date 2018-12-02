@@ -33,7 +33,7 @@ class ReusableItem: MenuCellPresentable {
     }
 
     var icon: UIImage? {
-        var itemImage = UIImage(named: imageName)
+        let itemImage = UIImage(named: imageName)
         return scaleUIImageToSize(image: itemImage ?? UIImage(), size: CGSize(width: 75, height: 75))
     }
 
@@ -55,14 +55,11 @@ class ReusableItem: MenuCellPresentable {
     }
 
     func scaleUIImageToSize( image: UIImage, size: CGSize) -> UIImage {
-                let hasAlpha = false
-                let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
-
-                UIGraphicsBeginImageContextWithOptions(size, false, scale)
-                image.draw(in: CGRect(origin: CGPoint.zero, size: size))
-                let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-                UIGraphicsEndImageContext()
-
-                return scaledImage!
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        UIGraphicsBeginImageContextWithOptions(size, false, scale)
+        image.draw(in: CGRect(origin: CGPoint.zero, size: size))
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return scaledImage!
     }
 }

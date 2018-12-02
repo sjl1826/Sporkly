@@ -9,14 +9,16 @@
 import Foundation
 import UIKit
 
-class PlateViewController : UIViewController, Plateable, UITableViewDelegate, UITableViewDataSource {
+class PlateViewController: UIViewController, Plateable, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var container: UIView!
     @IBOutlet weak var plateTable: UITableView!  {
         didSet {
-    plateTable.registerNib(forCellType: MenuCell.self)
+            plateTable.registerNib(forCellType: MenuCell.self)
+        }
     }
-    }
+
     var plateList = [MenuCellPresentable]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         plateTable.delegate = self
@@ -32,19 +34,25 @@ class PlateViewController : UIViewController, Plateable, UITableViewDelegate, UI
     @IBAction func goBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
+
     func addPlate(item: MenuCellPresentable) {
         plateList.append(item)
         plateTable.reloadData()
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Plate.plateArray.count
     }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueCell(ofType: MenuCell.self, for: indexPath)
         cell.item = Plate.plateArray[indexPath.row]
         return cell
     }
-    
+
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
 }
 
 protocol Plateable {

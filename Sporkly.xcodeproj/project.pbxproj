@@ -153,6 +153,40 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		BD7870A121B3D3C800E46A50 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				BD7870A421B3D3EA00E46A50 /* Storyboard */,
+				56975A0D21B33C760093ADAC /* DetailsPageViewController.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		BD7870A221B3D3D900E46A50 /* Plate */ = {
+			isa = PBXGroup;
+			children = (
+				BD7870A321B3D3E200E46A50 /* Storyboard */,
+				5642151F21B28D0B003B118D /* PlateViewController.swift */,
+			);
+			path = Plate;
+			sourceTree = "<group>";
+		};
+		BD7870A321B3D3E200E46A50 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5642152121B28D23003B118D /* Plate.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		BD7870A421B3D3EA00E46A50 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				56B9790B21A0A6EA00773F80 /* DetailsPage.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		BDADF188217A95D2005A6BD6 = {
 			isa = PBXGroup;
 			children = (
@@ -178,16 +212,14 @@
 		BDADF193217A95D2005A6BD6 /* Sporkly */ = {
 			isa = PBXGroup;
 			children = (
+				BD7870A221B3D3D900E46A50 /* Plate */,
+				BD7870A121B3D3C800E46A50 /* Details */,
 				BD70DC74219A24BC00BAEE97 /* Networking */,
 				BDADF1D4217AE2A5005A6BD6 /* Restaurants */,
 				BDADF1C9217A96BF005A6BD6 /* Shared */,
 				BDADF1C2217A95D9005A6BD6 /* Launch */,
 				BDADF19B217A95D3005A6BD6 /* Assets.xcassets */,
 				BDADF1A0217A95D3005A6BD6 /* Info.plist */,
-				56B9790B21A0A6EA00773F80 /* DetailsPage.storyboard */,
-				56975A0D21B33C760093ADAC /* DetailsPageViewController.swift */,
-				5642151F21B28D0B003B118D /* PlateViewController.swift */,
-				5642152121B28D23003B118D /* Plate.storyboard */,
 			);
 			path = Sporkly;
 			sourceTree = "<group>";

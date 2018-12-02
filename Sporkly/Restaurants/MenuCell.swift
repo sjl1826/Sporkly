@@ -34,6 +34,7 @@ class MenuCell: UITableViewCell {
             rightLabel.textColor = UIColor.gray
         }
     }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundBox.clipsToBounds = true

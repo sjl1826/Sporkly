@@ -18,8 +18,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
             tableView.registerNib(forCellType: MenuCell.self)
         }
     }
-    //let searchController = SearchBarController()
-    //searchController.tableType = "food"
+
     var items: [MenuCellPresentable] = []
     var desserts: [MenuItem] = [] // 3 separate for organization?
     var entrees: [MenuItem] = []
@@ -42,6 +41,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
     @IBAction func filterList(_ sender: Any) {
         sortByLowestPrice()
     }
+
     @IBAction func showPlate(_ sender: Any) {
         let plateBoard = UIStoryboard(name: "Plate", bundle: nil)
         let plate = plateBoard.instantiateViewController(withIdentifier: "PlateViewController") as! PlateViewController
@@ -50,6 +50,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
         self.present(plate, animated: true, completion: nil)
         
     }
+
     func sortByLowestPrice() {
         let sorted = menuItems.sorted(by:{$0.price < $1.price})
         menuItems.removeAll()
@@ -57,7 +58,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
         items.removeAll()
         reloadItemList()
         tableView.reloadData()
-    
     }
 
     func sortByHighestPrice() {
@@ -66,7 +66,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
         menuItems = sorted
         reloadItemList()
         tableView.reloadData()
-        
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -95,8 +94,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
         }
         reloadItemList()
         tableView.reloadData()
-        
     }
+
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         print("WHY")
         menuItems.removeAll()
@@ -104,7 +103,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
         reloadItemList()
         tableView.reloadData()
     }
-    
 }
 
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
@@ -124,8 +122,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if (selectedRestaurant == nil) {
-        items[indexPath.row].didSelectCell()
-        selectedRestaurant = items[indexPath.row].title
+            items[indexPath.row].didSelectCell()
+            selectedRestaurant = items[indexPath.row].title
         } else if ((selectedRestaurant != nil) && menuItems.count > 0) {
             let foodInfo = menuItems[indexPath.row]
             let detailsBoard = UIStoryboard(name: "DetailsPage", bundle: nil)
@@ -135,9 +133,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             detailPage.foodNameText = foodInfo.name
             detailPage.item = items[indexPath.row]
             self.present(detailPage, animated: true, completion: nil)
-            
         }
-        
     }
 
     func didGetMenu(menu: Menu) {
@@ -149,12 +145,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         allItems = menuItems
         self.tableView.reloadWithAnimation()
     }
-    
+
     func reloadItemList() {
         var newItems = [MenuCellPresentable]()
         for item in menuItems {
             var picName = String()
             if let pic = UIImage(named: item.name) {
+                print(pic) //temporarily silencing warning
                 picName = item.name
             } else {
                 picName = "NoPictureIcon"
@@ -165,6 +162,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             newItems.append(newItem)
         }
         items = newItems
-    
     }
 }
