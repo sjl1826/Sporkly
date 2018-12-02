@@ -101,7 +101,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        print("WHY")
         menuItems.removeAll()
         menuItems = allItems
         reloadItemList()
