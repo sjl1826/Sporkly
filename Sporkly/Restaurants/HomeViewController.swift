@@ -29,6 +29,11 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = UIColor.white
+        let placeholder = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
+        placeholder?.textColor = UIColor.white
+        searchBar.setImage(UIImage(named:"searchIcon"), for: .search, state: .normal)
         API.shared.menuDelegate = self
         items = Restaurants.defaultRestaurants
     }
