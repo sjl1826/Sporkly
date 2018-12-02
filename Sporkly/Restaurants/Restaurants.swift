@@ -13,6 +13,8 @@ class Restaurants {
     static var defaultRestaurants: [MenuCellPresentable] {
         var restaurants: [MenuCellPresentable] = []
         restaurants.append(CheesecakeFactory())
+        restaurants.append(BJs())
+        restaurants.append(McDonalds())
         restaurants.append(BobsBurgers())
         restaurants.append(ChefBills())
         restaurants.append(ChineseCuisine())
@@ -30,7 +32,8 @@ class CheesecakeFactory: MenuCellPresentable {
     }
 
     var icon: UIImage? {
-        return UIImage(named: "cheese")
+        let image = UIImage(named: "cheese") ?? UIImage()
+        return scaleUIImageToSize(image: image, size: CGSize(width: 75, height: 75))
     }
 
     var detailColor: UIColor {
@@ -60,7 +63,8 @@ class BobsBurgers: MenuCellPresentable {
     }
 
     var icon: UIImage? {
-        return UIImage(named: "burger")
+        let image = UIImage(named: "burger") ?? UIImage()
+        return scaleUIImageToSize(image: image, size: CGSize(width: 75, height: 75))
     }
 
     var detailColor: UIColor {
@@ -90,7 +94,8 @@ class ChefBills: MenuCellPresentable {
     }
 
     var icon: UIImage? {
-        return UIImage(named: "steak")
+        let image = UIImage(named: "steak") ?? UIImage()
+        return scaleUIImageToSize(image: image, size: CGSize(width: 75, height: 75))
     }
 
     var detailColor: UIColor {
@@ -112,7 +117,7 @@ class ChefBills: MenuCellPresentable {
 
 class ChineseCuisine: MenuCellPresentable {
     var title: String? {
-        return "   Boiling Crab"
+        return "   Uncle Chen's"
     }
 
     var backgroundColor: UIColor {
@@ -120,7 +125,8 @@ class ChineseCuisine: MenuCellPresentable {
     }
 
     var icon: UIImage? {
-        return UIImage(named: "chinese")
+        let image = UIImage(named: "chinese") ?? UIImage()
+        return scaleUIImageToSize(image: image, size: CGSize(width: 75, height: 75))
     }
 
     var detailColor: UIColor {
@@ -133,6 +139,68 @@ class ChineseCuisine: MenuCellPresentable {
 
     var left: String? {
         return "Asian"
+    }
+
+    var right: String? {
+        return "$$"
+    }
+}
+
+class McDonalds: MenuCellPresentable {
+    var title: String? {
+        return "   McDonalds"
+    }
+
+    var backgroundColor: UIColor {
+        return UIColor.white
+    }
+
+    var icon: UIImage? {
+        let image = UIImage(named: "mcdonald") ?? UIImage()
+        return scaleUIImageToSize(image: image, size: CGSize(width: 75, height: 75))
+    }
+
+    var detailColor: UIColor {
+        return UIColor.gray
+    }
+
+    var detail: String? {
+        return "Westwood, CA"
+    }
+
+    var left: String? {
+        return "Fast Food"
+    }
+
+    var right: String? {
+        return "$"
+    }
+}
+
+class BJs: MenuCellPresentable {
+    var title: String? {
+        return "   BJ's"
+    }
+
+    var backgroundColor: UIColor {
+        return UIColor.white
+    }
+
+    var icon: UIImage? {
+        let image = UIImage(named: "bjs") ?? UIImage()
+        return scaleUIImageToSize(image: image, size: CGSize(width: 75, height: 75))
+    }
+
+    var detailColor: UIColor {
+        return UIColor.gray
+    }
+
+    var detail: String? {
+        return "Westwood, CA"
+    }
+
+    var left: String? {
+        return "American"
     }
 
     var right: String? {

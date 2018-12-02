@@ -48,7 +48,6 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
         plate.view.backgroundColor = UIColor.clear
         plate.modalPresentationStyle = .overCurrentContext
         self.present(plate, animated: true, completion: nil)
-        
     }
 
     func sortByLowestPrice() {
@@ -57,7 +56,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
         menuItems = sorted
         items.removeAll()
         reloadItemList()
-        tableView.reloadData()
+        tableView.reloadWithAnimation()
     }
 
     func sortByHighestPrice() {
@@ -65,7 +64,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
         menuItems.removeAll()
         menuItems = sorted
         reloadItemList()
-        tableView.reloadData()
+        tableView.reloadWithAnimation()
     }
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -81,7 +80,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
                    items.append(Restaurants.defaultRestaurants[i])
                 }
             }
-            tableView.reloadData()
+            tableView.reloadWithAnimation()
             return
         }
         // for menu
@@ -93,7 +92,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
             }
         }
         reloadItemList()
-        tableView.reloadData()
+        tableView.reloadWithAnimation()
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
@@ -101,7 +100,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
         menuItems.removeAll()
         menuItems = allItems
         reloadItemList()
-        tableView.reloadData()
+        tableView.reloadWithAnimation()
     }
 }
 

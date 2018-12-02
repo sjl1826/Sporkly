@@ -53,13 +53,4 @@ class ReusableItem: MenuCellPresentable {
         let price = String(itemPrice)
         return price
     }
-
-    func scaleUIImageToSize( image: UIImage, size: CGSize) -> UIImage {
-        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
-        UIGraphicsBeginImageContextWithOptions(size, false, scale)
-        image.draw(in: CGRect(origin: CGPoint.zero, size: size))
-        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return scaledImage!
-    }
 }
