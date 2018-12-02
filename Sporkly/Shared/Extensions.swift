@@ -12,6 +12,10 @@ extension UIColor {
     @nonobjc class var twilightBlue: UIColor {
         return UIColor(red: 7.0 / 255.0, green: 74.0 / 255.0, blue: 119.0 / 255.0, alpha: 1.0)
     }
+
+    @nonobjc class var pinkRed: UIColor {
+        return UIColor(red: 236.0 / 255.0, green: 93.0 / 255.0, blue: 89.0 / 255.0, alpha: 1.0)
+    }
 }
 
 extension UITableView {
