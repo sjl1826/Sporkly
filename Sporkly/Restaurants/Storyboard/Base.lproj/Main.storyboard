@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTY-7k-PS7">
                                 <rect key="frame" x="0.0" y="44" width="375" height="135"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search Items" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBH-gq-obh">
+                                    <searchBar contentMode="redraw" barStyle="black" searchBarStyle="minimal" placeholder="Search Items" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBH-gq-obh">
                                         <rect key="frame" x="18.666666666666657" y="49" width="337.66666666666674" height="56"/>
                                         <color key="backgroundColor" red="0.97259396310000001" green="0.099774659542208724" blue="0.0" alpha="0.41914597602739734" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -43,11 +43,11 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiD-1M-eJC">
-                                        <rect key="frame" x="122.33333333333333" y="10" width="130.33333333333337" height="35"/>
+                                        <rect key="frame" x="122.00000000000001" y="10" width="131.33333333333337" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="frc-24-XfB"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="DINAlternate-Bold" family="DIN Alternate" pointSize="23"/>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -63,7 +63,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92518931630000001" green="0.36167347430000002" blue="0.34898757930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="backgroundColor" red="0.92518931630000001" green="0.36167347430000002" blue="0.34898757930000002" alpha="0.57512842465753422" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstItem="gBH-gq-obh" firstAttribute="centerX" secondItem="YTY-7k-PS7" secondAttribute="centerX" id="0nb-J4-1uf"/>
                                     <constraint firstItem="NiD-1M-eJC" firstAttribute="centerX" secondItem="YTY-7k-PS7" secondAttribute="centerX" id="30w-jo-HzY"/>
@@ -86,7 +86,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="0.92518931630000001" green="0.36167347430000002" blue="0.34898757930000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.92518931630000001" green="0.36167347430000002" blue="0.34898757930000002" alpha="0.69004173801369861" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="SSZ-zD-uke" firstAttribute="bottom" secondItem="O22-hA-Q79" secondAttribute="bottom" id="JYq-7Y-m5U"/>
                             <constraint firstItem="YTY-7k-PS7" firstAttribute="leading" secondItem="O22-hA-Q79" secondAttribute="leading" id="VQf-sL-2EE"/>
