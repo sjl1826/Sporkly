@@ -85,10 +85,7 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
                    items.append(Restaurants.defaultRestaurants[i])
                 }
             }
-            tableView.reloadWithAnimation()
-            return
-        }
-        // for menu
+        } else {
         for i in 0...allItems.count - 1 {
             if allItems[i].name.range(of:searchedUpper!) != nil {
                 menuItems.append(allItems[i])
@@ -96,15 +93,23 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
                 menuItems.append(allItems[i])
             }
         }
-        reloadItemList()
+            reloadItemList()
+        }
         tableView.reloadWithAnimation()
+        self.searchBar.endEditing(true)
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         menuItems.removeAll()
-        menuItems = allItems
-        reloadItemList()
+        if(selectedRestaurant == nil) {
+            items = Restaurants.defaultRestaurants
+        } else {
+            menuItems = allItems
+            reloadItemList()
+        }
+        self.searchBar.text = ""
         tableView.reloadWithAnimation()
+        self.searchBar.endEditing(true)
     }
 }
 
