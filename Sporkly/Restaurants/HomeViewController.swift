@@ -12,6 +12,7 @@ struct Plate {
 }
 class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate, UIViewControllerPreviewingDelegate {
 
+    @IBOutlet weak var sporklyLabel: UILabel!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView! {
         didSet {
@@ -31,7 +32,8 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate, U
         if UIApplication.shared.keyWindow?.traitCollection.forceTouchCapability == .available{
             registerForPreviewing(with: self, sourceView: self.tableView)
         }
-        
+        let tappedSporkly = UITapGestureRecognizer(target: self, action: #selector(tappedSporklyLabel))
+        sporklyLabel.addGestureRecognizer(tappedSporkly)
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = UIColor.white
         let placeholder = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
@@ -191,6 +193,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         popVC.item = items[indexPath!.row]
         previewingContext.sourceRect = cell.frame
         return popVC
+    }
+    @objc func tappedSporklyLabel(sender:UITapGestureRecognizer) {
+        selectedRestaurant = nil
+        items = Restaurants.defaultRestaurants
+        tableView.reloadWithAnimation()
     }
    
 }

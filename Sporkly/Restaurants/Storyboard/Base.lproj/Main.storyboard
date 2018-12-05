@@ -42,8 +42,8 @@
                                             <action selector="filterList:" destination="OU7-cP-PX3" eventType="touchUpInside" id="deK-Yf-gCE"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiD-1M-eJC">
-                                        <rect key="frame" x="122" y="10" width="131" height="35"/>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sporkly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiD-1M-eJC">
+                                        <rect key="frame" x="145.5" y="10" width="84" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="frc-24-XfB"/>
                                         </constraints>
@@ -101,6 +101,7 @@
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="gBH-gq-obh" id="kB8-8R-B4g"/>
+                        <outlet property="sporklyLabel" destination="NiD-1M-eJC" id="bUn-qp-lQ8"/>
                         <outlet property="tableView" destination="SSZ-zD-uke" id="C8G-og-iNM"/>
                     </connections>
                 </viewController>
