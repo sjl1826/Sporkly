@@ -10,7 +10,7 @@ import UIKit
 struct Plate {
     static var plateArray = [MenuCellPresentable] ()
 }
-class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
+class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate, UIViewControllerPreviewingDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView! {
@@ -26,9 +26,12 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate {
     var menuItems: [MenuItem] = [] // for loading tableview?
     var allItems: [MenuItem] = []
     var selectedRestaurant : String?
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        if UIApplication.shared.keyWindow?.traitCollection.forceTouchCapability == .available{
+            registerForPreviewing(with: self, sourceView: self.tableView)
+        }
+        
         let textFieldInsideSearchBar = searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = UIColor.white
         let placeholder = textFieldInsideSearchBar!.value(forKey: "placeholderLabel") as? UILabel
@@ -171,4 +174,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
         items = newItems
     }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+          show(viewControllerToCommit, sender: self)
+    }
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        let indexPath = self.tableView?.indexPathForRow(at: location)
+        let foodInfo = self.menuItems[indexPath!.row]
+        guard  let cell = self.tableView.cellForRow(at: indexPath!) else { return nil }
+        let peekStoryboard = UIStoryboard(name: "PeekAndPop", bundle: nil)
+        let popVC = peekStoryboard.instantiateViewController(withIdentifier: "PeekAndPop") as! PeekAndPop
+        popVC.descriptionText = foodInfo.description
+        popVC.view.backgroundColor = UIColor.clear
+        popVC.modalPresentationStyle = .overCurrentContext
+        popVC.preferredContentSize = CGSize(width: 0.0, height: 400)
+        popVC.item = items[indexPath!.row]
+        previewingContext.sourceRect = cell.frame
+        return popVC
+    }
+   
 }

@@ -12,6 +12,8 @@
 		5642152221B28D23003B118D /* Plate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5642152121B28D23003B118D /* Plate.storyboard */; };
 		56975A0E21B33C760093ADAC /* DetailsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56975A0D21B33C760093ADAC /* DetailsPageViewController.swift */; };
 		56B9790C21A0A6EA00773F80 /* DetailsPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56B9790B21A0A6EA00773F80 /* DetailsPage.storyboard */; };
+		56E0CB7C21B751FE00C54F43 /* PeekAndPop.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E0CB7B21B751FE00C54F43 /* PeekAndPop.storyboard */; };
+		56E0CB7E21B7521A00C54F43 /* PeekAndPop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E0CB7D21B7521A00C54F43 /* PeekAndPop.swift */; };
 		8C18F924E36B04E2EB78DF1E /* Pods_SporklyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0690DE2BFB415ACE7FC6FE1 /* Pods_SporklyUITests.framework */; };
 		B376F2ADA08F357E43447C31 /* Pods_SporklyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 896F980D33400FB1AC63076B /* Pods_SporklyTests.framework */; };
 		BD6E632E219A6B4E00303636 /* Restaurants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD6E632D219A6B4E00303636 /* Restaurants.swift */; };
@@ -63,6 +65,8 @@
 		5642152121B28D23003B118D /* Plate.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Plate.storyboard; sourceTree = "<group>"; };
 		56975A0D21B33C760093ADAC /* DetailsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsPageViewController.swift; sourceTree = "<group>"; };
 		56B9790B21A0A6EA00773F80 /* DetailsPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailsPage.storyboard; sourceTree = "<group>"; };
+		56E0CB7B21B751FE00C54F43 /* PeekAndPop.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PeekAndPop.storyboard; sourceTree = "<group>"; };
+		56E0CB7D21B7521A00C54F43 /* PeekAndPop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekAndPop.swift; sourceTree = "<group>"; };
 		632DB369DEBA2F340A849A17 /* Pods-Sporkly.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sporkly.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sporkly/Pods-Sporkly.release.xcconfig"; sourceTree = "<group>"; };
 		896F980D33400FB1AC63076B /* Pods_SporklyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SporklyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD6E632D219A6B4E00303636 /* Restaurants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurants.swift; sourceTree = "<group>"; };
@@ -125,6 +129,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		56E0CB7A21B751E800C54F43 /* PeekPop */ = {
+			isa = PBXGroup;
+			children = (
+				56E0CB7B21B751FE00C54F43 /* PeekAndPop.storyboard */,
+				56E0CB7D21B7521A00C54F43 /* PeekAndPop.swift */,
+			);
+			path = PeekPop;
+			sourceTree = "<group>";
+		};
 		BD70DC74219A24BC00BAEE97 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +225,7 @@
 		BDADF193217A95D2005A6BD6 /* Sporkly */ = {
 			isa = PBXGroup;
 			children = (
+				56E0CB7A21B751E800C54F43 /* PeekPop */,
 				BD7870A221B3D3D900E46A50 /* Plate */,
 				BD7870A121B3D3C800E46A50 /* Details */,
 				BD70DC74219A24BC00BAEE97 /* Networking */,
@@ -410,6 +424,7 @@
 				56B9790C21A0A6EA00773F80 /* DetailsPage.storyboard in Resources */,
 				BD70DC89219A688D00BAEE97 /* MenuCell.xib in Resources */,
 				BDADF19F217A95D3005A6BD6 /* LaunchScreen.storyboard in Resources */,
+				56E0CB7C21B751FE00C54F43 /* PeekAndPop.storyboard in Resources */,
 				BDADF19C217A95D3005A6BD6 /* Assets.xcassets in Resources */,
 				BDADF19A217A95D2005A6BD6 /* Main.storyboard in Resources */,
 				BDADF1CF217AD4EF005A6BD6 /* Launch.storyboard in Resources */,
@@ -522,6 +537,7 @@
 				BD70DC87219A67EE00BAEE97 /* MenuCellPresentable.swift in Sources */,
 				BD70DC85219A67B200BAEE97 /* MenuCell.swift in Sources */,
 				BDADF1CD217AC81C005A6BD6 /* CountingLabel.swift in Sources */,
+				56E0CB7E21B7521A00C54F43 /* PeekAndPop.swift in Sources */,
 				BDADF1D1217AD859005A6BD6 /* CircularTransition.swift in Sources */,
 				BD6E632E219A6B4E00303636 /* Restaurants.swift in Sources */,
 				BDADF1C8217A96B7005A6BD6 /* SporkStoryboard.swift in Sources */,
