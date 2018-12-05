@@ -92,9 +92,10 @@ class HomeViewController: UIViewController, UISearchBarDelegate, MenuDelegate, U
             }
         } else {
         for i in 0...allItems.count - 1 {
+            let upperDescription = allItems[i].description.uppercased()
             if allItems[i].name.range(of:searchedUpper!) != nil {
                 menuItems.append(allItems[i])
-            } else if allItems[i].description.range(of:searchedUpper!) != nil {
+            } else if upperDescription.range(of:searchedUpper!) != nil {
                 menuItems.append(allItems[i])
             }
         }
