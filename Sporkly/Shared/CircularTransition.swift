@@ -95,14 +95,13 @@ extension CircularTransition:UIViewControllerAnimatedTransitioning {
     }
 }
 
-func frameForCircle (withViewCenter viewCenter:CGPoint, size viewSize:CGSize, startPoint:CGPoint) -> CGRect {
-    let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
-    let yLength = fmax(startPoint.y, viewSize.height - startPoint.y)
-
-    let offestVector = sqrt(xLength * xLength + yLength * yLength) * 2
-    let size = CGSize(width: offestVector, height: offestVector)
-
-    return CGRect(origin: CGPoint.zero, size: size)
-
-}
+func frameForCircle (withViewCenter viewCenter: CGPoint,
+                     size viewSize: CGSize,
+                     startPoint: CGPoint) -> CGRect {
+        let xLength = fmax(startPoint.x, viewSize.width - startPoint.x)
+        let yLength = fmax(startPoint.y, viewSize.height - startPoint.y)
+        let offestVector = sqrt(xLength * xLength + yLength * yLength) * 2
+        let size = CGSize(width: offestVector, height: offestVector)
+        return CGRect(origin: CGPoint.zero, size: size)
+    }
 }

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FkL-vD-Jih">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Launch View Controller-->
+        <scene sceneID="aLY-DZ-8rP">
+            <objects>
+                <viewController id="FkL-vD-Jih" customClass="LaunchViewController" customModule="Sporkly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="NRs-hf-74W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKK-xu-X1b" customClass="CountingLabel" customModule="Sporkly" customModuleProvider="target">
+                                <rect key="frame" x="161.5" y="321.5" width="52" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="u0n-Yp-hxT">
+                                <rect key="frame" x="52.5" y="61.5" width="270" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="QOS-lc-oen"/>
+                                    <constraint firstAttribute="width" constant="270" id="a9Q-Xj-MY1"/>
+                                    <constraint firstAttribute="width" secondItem="u0n-Yp-hxT" secondAttribute="height" multiplier="9:4" id="nBp-cg-daa"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.9251893162727356" green="0.36167347431182861" blue="0.34898757934570312" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="CKK-xu-X1b" firstAttribute="centerY" secondItem="NRs-hf-74W" secondAttribute="centerY" id="6gV-Lo-3Ak"/>
+                            <constraint firstItem="CKK-xu-X1b" firstAttribute="top" secondItem="u0n-Yp-hxT" secondAttribute="bottom" constant="140" id="7ad-iF-ggm"/>
+                            <constraint firstItem="CKK-xu-X1b" firstAttribute="centerX" secondItem="NRs-hf-74W" secondAttribute="centerX" id="lRc-T2-igB"/>
+                            <constraint firstItem="u0n-Yp-hxT" firstAttribute="centerX" secondItem="NRs-hf-74W" secondAttribute="centerX" id="q22-eJ-VZu"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="X97-Ci-m2y"/>
+                    </view>
+                    <connections>
+                        <outlet property="countingLabel" destination="CKK-xu-X1b" id="qvI-DN-MX4"/>
+                        <segue destination="77E-ug-IwO" kind="show" identifier="menu" id="nFk-PT-ArV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UnG-eO-MHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28" y="-89"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="oa4-68-IP2">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Main" storyboardName="Main" id="77E-ug-IwO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FiP-DR-VO9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="469" y="-139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Logo" width="410" height="162"/>
+    </resources>
+</document>

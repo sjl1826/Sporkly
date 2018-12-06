@@ -50,10 +50,11 @@ extension Menu: Decodable {
 
 struct MenuItem {
     var name: String
-    var price: String
+    var price: Double
     var picture: String
     var keywords: String
     var description: String
+    var category: String
 }
 
 extension MenuItem: Decodable {
@@ -63,12 +64,14 @@ extension MenuItem: Decodable {
         case picture
         case keywords
         case description
+        case category
     }
 
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: ItemKeys.self)
+        category = try container.decode(String.self, forKey: .category)
         name = try container.decode(String.self, forKey: .name)
-        price = try container.decode(String.self, forKey: .price)
+        price = try container.decode(Double.self, forKey: .price)
         picture = try container.decode(String.self, forKey: .picture)
         keywords = try container.decode(String.self, forKey: .keywords)
         description = try container.decode(String.self, forKey: .description)

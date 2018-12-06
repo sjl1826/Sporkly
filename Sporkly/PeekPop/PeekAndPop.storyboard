@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bqN-dI-Owj">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--PeekAndPop-->
+        <scene sceneID="lg1-FI-4gm">
+            <objects>
+                <viewController storyboardIdentifier="PeekAndPop" title="PeekAndPop" id="bqN-dI-Owj" customClass="PeekAndPop" customModule="Sporkly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N7Y-RM-gHj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GxH-P0-47P" userLabel="container">
+                                <rect key="frame" x="37.5" y="200" width="300" height="267"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Cp-aj-HAR" userLabel="description">
+                                        <rect key="frame" x="10" y="10" width="280" height="175"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vy3-we-05I" userLabel="background">
+                                        <rect key="frame" x="0.0" y="195" width="300" height="72"/>
+                                        <color key="backgroundColor" red="1" green="0.284166841" blue="0.38032420420000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UhB-v5-lZ8" userLabel="Plate">
+                                        <rect key="frame" x="134" y="215" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="UhB-v5-lZ8" secondAttribute="height" multiplier="1:1" id="QP4-R5-Eeo"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="plateIcon"/>
+                                        <connections>
+                                            <action selector="addItem:" destination="bqN-dI-Owj" eventType="touchUpInside" id="j13-eH-qO9"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="9Cp-aj-HAR" firstAttribute="top" secondItem="GxH-P0-47P" secondAttribute="top" constant="10" id="1OP-7A-xfV"/>
+                                    <constraint firstItem="vy3-we-05I" firstAttribute="top" secondItem="UhB-v5-lZ8" secondAttribute="top" constant="-20" id="1ss-q0-H0m"/>
+                                    <constraint firstAttribute="trailing" secondItem="9Cp-aj-HAR" secondAttribute="trailing" constant="10" id="4hh-gU-jlb"/>
+                                    <constraint firstAttribute="trailing" secondItem="vy3-we-05I" secondAttribute="trailing" id="RRJ-3v-NpT"/>
+                                    <constraint firstItem="UhB-v5-lZ8" firstAttribute="centerX" secondItem="GxH-P0-47P" secondAttribute="centerX" id="VhI-lm-Dt9"/>
+                                    <constraint firstItem="vy3-we-05I" firstAttribute="top" secondItem="9Cp-aj-HAR" secondAttribute="bottom" constant="10" id="Y8p-VI-vlw"/>
+                                    <constraint firstAttribute="bottom" secondItem="vy3-we-05I" secondAttribute="bottom" id="aCH-Gq-KVY"/>
+                                    <constraint firstAttribute="bottom" secondItem="UhB-v5-lZ8" secondAttribute="bottom" constant="20" id="aZB-um-WYm"/>
+                                    <constraint firstItem="UhB-v5-lZ8" firstAttribute="height" secondItem="GxH-P0-47P" secondAttribute="height" multiplier="0.12" id="fS9-O3-hhZ"/>
+                                    <constraint firstItem="vy3-we-05I" firstAttribute="leading" secondItem="GxH-P0-47P" secondAttribute="leading" id="lwT-rb-vhR"/>
+                                    <constraint firstItem="9Cp-aj-HAR" firstAttribute="leading" secondItem="GxH-P0-47P" secondAttribute="leading" constant="10" id="yEs-Xo-bgO"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="GxH-P0-47P" firstAttribute="centerX" secondItem="N7Y-RM-gHj" secondAttribute="centerX" id="4dC-xE-ZcP"/>
+                            <constraint firstItem="GxH-P0-47P" firstAttribute="height" secondItem="N7Y-RM-gHj" secondAttribute="height" multiplier="0.4" id="CkM-38-ml8"/>
+                            <constraint firstItem="GxH-P0-47P" firstAttribute="centerY" secondItem="N7Y-RM-gHj" secondAttribute="centerY" id="Xsm-Fv-JEl"/>
+                            <constraint firstItem="GxH-P0-47P" firstAttribute="width" secondItem="N7Y-RM-gHj" secondAttribute="width" multiplier="0.8" id="mqw-qB-xz1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NrT-EA-g1c"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="p9E-ot-kyX" appends="YES" id="vF8-R8-cqu"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="bottom" destination="vy3-we-05I" id="3ne-4z-ycU"/>
+                        <outlet property="container" destination="GxH-P0-47P" id="LnM-LT-Ry0"/>
+                        <outlet property="decriptionLabel" destination="9Cp-aj-HAR" id="OTj-vb-zuz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="55j-83-T7v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="p9E-ot-kyX">
+                    <connections>
+                        <action selector="exit:" destination="bqN-dI-Owj" id="hWf-vC-pgy"/>
+                        <outlet property="delegate" destination="N7Y-RM-gHj" id="gqD-lo-4Pd"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="plateIcon" width="50" height="50"/>
+    </resources>
+</document>

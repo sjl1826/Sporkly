@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OU7-cP-PX3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="7Du-65-9tp">
+            <objects>
+                <viewController id="OU7-cP-PX3" customClass="HomeViewController" customModule="Sporkly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O7Z-At-BbV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YTY-7k-PS7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="120"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="      Search Items" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gBH-gq-obh">
+                                        <rect key="frame" x="19" y="46" width="337.5" height="56"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="OU7-cP-PX3" id="S80-Uc-GvM"/>
+                                        </connections>
+                                    </searchBar>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a0S-6A-w7k" userLabel="Filter">
+                                        <rect key="frame" x="352" y="19" width="15" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="17" id="AfK-Ig-Df6"/>
+                                            <constraint firstAttribute="width" constant="15" id="Mlx-s0-ake"/>
+                                        </constraints>
+                                        <state key="normal" image="filter"/>
+                                        <connections>
+                                            <action selector="filterList:" destination="OU7-cP-PX3" eventType="touchUpInside" id="deK-Yf-gCE"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sporkly" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NiD-1M-eJC">
+                                        <rect key="frame" x="145.5" y="10" width="84" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="frc-24-XfB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ypK-rc-RdM" userLabel="Plate">
+                                        <rect key="frame" x="10" y="10" width="35" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="KM6-nv-r2Q"/>
+                                            <constraint firstAttribute="width" secondItem="ypK-rc-RdM" secondAttribute="height" multiplier="1:1" id="e1u-l2-LuI"/>
+                                        </constraints>
+                                        <state key="normal" image="plateIcon"/>
+                                        <connections>
+                                            <action selector="showPlate:" destination="OU7-cP-PX3" eventType="touchUpInside" id="lca-uq-gLA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92518931630000001" green="0.36167347430000002" blue="0.34898757930000002" alpha="0.57512842465753422" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="gBH-gq-obh" firstAttribute="centerX" secondItem="YTY-7k-PS7" secondAttribute="centerX" id="0nb-J4-1uf"/>
+                                    <constraint firstItem="NiD-1M-eJC" firstAttribute="centerX" secondItem="YTY-7k-PS7" secondAttribute="centerX" id="30w-jo-HzY"/>
+                                    <constraint firstItem="gBH-gq-obh" firstAttribute="top" secondItem="a0S-6A-w7k" secondAttribute="bottom" constant="10" id="Bct-81-t3v"/>
+                                    <constraint firstItem="ypK-rc-RdM" firstAttribute="centerY" secondItem="NiD-1M-eJC" secondAttribute="centerY" id="DNA-nz-qdB"/>
+                                    <constraint firstAttribute="trailing" secondItem="a0S-6A-w7k" secondAttribute="trailing" constant="8" id="QTg-ed-jfo"/>
+                                    <constraint firstItem="NiD-1M-eJC" firstAttribute="top" secondItem="YTY-7k-PS7" secondAttribute="top" constant="10" id="U67-YI-ZVj"/>
+                                    <constraint firstItem="a0S-6A-w7k" firstAttribute="centerY" secondItem="ypK-rc-RdM" secondAttribute="centerY" id="VIB-sx-pdD"/>
+                                    <constraint firstItem="ypK-rc-RdM" firstAttribute="leading" secondItem="YTY-7k-PS7" secondAttribute="leading" constant="10" id="eB5-jc-AHm"/>
+                                    <constraint firstItem="gBH-gq-obh" firstAttribute="width" secondItem="YTY-7k-PS7" secondAttribute="width" multiplier="0.9" id="fXc-NW-i0p"/>
+                                    <constraint firstAttribute="height" constant="120" id="imG-av-zz1"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SSZ-zD-uke">
+                                <rect key="frame" x="0.0" y="140" width="375" height="527"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="OU7-cP-PX3" id="ICj-x4-qpL"/>
+                                    <outlet property="delegate" destination="OU7-cP-PX3" id="mPc-0f-5Gq"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92518931630000001" green="0.36167347430000002" blue="0.34898757930000002" alpha="0.69004173801369861" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SSZ-zD-uke" firstAttribute="bottom" secondItem="O22-hA-Q79" secondAttribute="bottom" id="JYq-7Y-m5U"/>
+                            <constraint firstItem="YTY-7k-PS7" firstAttribute="leading" secondItem="O22-hA-Q79" secondAttribute="leading" id="VQf-sL-2EE"/>
+                            <constraint firstItem="YTY-7k-PS7" firstAttribute="trailing" secondItem="O22-hA-Q79" secondAttribute="trailing" id="VeP-TV-fkn"/>
+                            <constraint firstItem="YTY-7k-PS7" firstAttribute="top" secondItem="O22-hA-Q79" secondAttribute="top" id="ViR-lm-1oG"/>
+                            <constraint firstItem="SSZ-zD-uke" firstAttribute="trailing" secondItem="O22-hA-Q79" secondAttribute="trailing" id="fZ7-pB-o1w"/>
+                            <constraint firstItem="SSZ-zD-uke" firstAttribute="top" secondItem="YTY-7k-PS7" secondAttribute="bottom" id="gBk-Kn-dnA"/>
+                            <constraint firstItem="SSZ-zD-uke" firstAttribute="leading" secondItem="O22-hA-Q79" secondAttribute="leading" id="k63-pB-JHh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="O22-hA-Q79"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="gBH-gq-obh" id="kB8-8R-B4g"/>
+                        <outlet property="sporklyLabel" destination="NiD-1M-eJC" id="bUn-qp-lQ8"/>
+                        <outlet property="tableView" destination="SSZ-zD-uke" id="C8G-og-iNM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HT0-li-9JT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="1DM-2R-yUg">
+                    <connections>
+                        <outlet property="delegate" destination="OU7-cP-PX3" id="89T-LZ-nrP"/>
+                        <outlet property="searchContentsController" destination="OU7-cP-PX3" id="Bfa-VW-3KY"/>
+                        <outlet property="searchResultsDataSource" destination="OU7-cP-PX3" id="d6J-xv-kZM"/>
+                        <outlet property="searchResultsDelegate" destination="OU7-cP-PX3" id="B5o-ng-VAh"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="73.913043478260875" y="-139.4021739130435"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="filter" width="104" height="104"/>
+        <image name="plateIcon" width="50" height="50"/>
+    </resources>
+</document>
